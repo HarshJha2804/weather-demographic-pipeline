@@ -1,0 +1,16 @@
+
+# Ignore local datasets
+data/
+
+# Ignore Python cache folders
+__pycache__/
+*.py[cod]
+
+# Ignore environment secrets
+.env
+.env.*
+!.env.example
+
+# Ignore Python virtual environments
+.venv/
+venv/
