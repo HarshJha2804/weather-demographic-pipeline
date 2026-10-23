@@ -1,0 +1,8 @@
+pandas
+requests
+google-cloud-bigquery
+pandas-gbq
+pyarrow
+pydata-google-auth
+streamlit
+pytest

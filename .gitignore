@@ -14,3 +14,4 @@ __pycache__/
 # Ignore Python virtual environments
 .venv/
 venv/
+run_log.txt
