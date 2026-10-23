@@ -1,6 +1,7 @@
 
 # Ignore local datasets
-data/
+data/*
+!data/population.csv
 
 # Ignore Python cache folders
 __pycache__/
