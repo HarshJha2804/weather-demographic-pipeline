@@ -7,14 +7,14 @@ import requests
 from google.cloud import bigquery
 import pandas_gbq
 import pyarrow
-import pydata_google_auth
+import google.auth
 
 
 API_URL = "https://api.open-meteo.com/v1/forecast"
 
 PROJECT_ID = "weather-demographic-bootcamp"
 DATASET_ID = "global_weather_data"
-TABLE_ID = "current_weather_status"
+TABLE_ID = "weather_pipeline_output"
 
 DATA_DIR = Path("data")
 INPUT_FILE = DATA_DIR / "population.csv"
@@ -99,8 +99,8 @@ def upload_to_bigquery(dataframe):
 
     print("\nAuthenticating with Google Cloud...")
 
-    credentials = pydata_google_auth.get_user_credentials(
-        ["https://www.googleapis.com/auth/cloud-platform"]
+    credentials, _ = google.auth.default(
+        scopes=["https://www.googleapis.com/auth/cloud-platform"]
     )
 
     # Confirm the BigQuery client can be initialized.
